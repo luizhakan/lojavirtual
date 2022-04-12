@@ -26,12 +26,26 @@ let itens = [
     estoque: 10,
     quantidade: 0
   },
+  {
+    codigo: 3,
+    nome: "Teste",
+    img: "./produtos/camisa-argentina.png",
+    descricao: "teste",
+    preco: "teste",
+    estoque : 0,
+    quantidade: 0
+  }
 ];
 
 
 
 loja = () => {
     let divProdutos = document.getElementById('produtos');
+
+    if(itens.estoque <= 0){
+      var esgotado = 'item esgotado';
+      console.log(esgotado)
+    }
 
     itens.map((valor) => {
         divProdutos.innerHTML += `
@@ -43,7 +57,7 @@ loja = () => {
             <h2>` + valor.nome +`</h2>
             <h3>`+ valor.preco +`</h3>
             <p>`+ valor.descricao +`</p>
-            <p>Estoque : `+ valor.estoque +`</p>
+            <p>Estoque : ` + valor.estoque <= 0 ? valor.esgotado: + valor.estoque +`</p>
             <a class="ancora" key="`+ valor.codigo +`" href"#">Adicionar ao carrinho</a>
             </li>
           </div>
@@ -55,10 +69,22 @@ loja();
 
 
 adicionarCarrinho = () => {
+
+  let divCarrinho = document.getElementById('carrinho');
+  divCarrinho.innerHTML = "";
+
+  itens.map((valor) => {
+      if(valor.quantidade > 0){
     
-    console.log(itens);
+    divCarrinho.innerHTML += `
+    <p>`+ valor.nome +` | quantidade : `+valor.quantidade+`| código do produto : 0`+valor.codigo+`</p>
+    <hr>
+    `}
+})
+    
 };
 
+// adicionarCarrinho();
 
 
 var links = document.getElementsByTagName('a');
