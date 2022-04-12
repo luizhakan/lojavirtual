@@ -28,6 +28,8 @@ let itens = [
   },
 ];
 
+
+
 loja = () => {
     let divProdutos = document.getElementById('produtos');
 
@@ -52,8 +54,6 @@ loja = () => {
 loja();
 
 
-
-
 adicionarCarrinho = (key) => {
     
     console.log(itens.quantidade);
@@ -61,10 +61,10 @@ adicionarCarrinho = (key) => {
 
 
 
-var links = document.querySelectorAll('.ancora');
+var indice = document.querySelectorAll('.ancora');
 
-for(var i = 0; i < links.length; i++){
-    links[i].addEventListener("click", function(){
+for(var i = 0; i < indice.length; i++){
+    indice[i].addEventListener("click", function(){
         let key = this.getAttribute('key');
         itens[key].quantidade++;
         adicionarCarrinho();
