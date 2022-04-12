@@ -57,7 +57,7 @@ loja = () => {
             <h2>` + valor.nome +`</h2>
             <h3>`+ valor.preco +`</h3>
             <p>`+ valor.descricao +`</p>
-            <p>Estoque : ` + valor.estoque <= 0 ? valor.esgotado: + valor.estoque +`</p>
+            <p>Estoque : ` /*+ valor.estoque <= 0 ? valor.esgotado:*/+ valor.estoque +`</p>
             <a class="ancora" key="`+ valor.codigo +`" href"#">Adicionar ao carrinho</a>
             </li>
           </div>
