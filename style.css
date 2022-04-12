@@ -2,6 +2,7 @@ body{
     text-align: center;
     background: gray;
     color: red;
+    background: black;
 }
 
 #cabecalho{
@@ -19,8 +20,9 @@ body{
     color: yellow;
 }
 
-#produtos p{
-    color: black;
+#produtos, #carrinho p{
+    color: yellow;
+    font-style: italic;
 }
 
 #produtos img{
@@ -48,7 +50,9 @@ h1,h2,h3,h4, p{
     padding: 10px;
 }
 
-button{
+input{
+    margin: 5px;
+    padding: 5px;
     background: transparent;
     color: purple;
     font-weight: 600;
