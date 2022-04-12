@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+    background: gray;
+    color: red;
+}
+
+#cabecalho{
+    font-size: 30px;
+    border: solid thin;
+    margin: 0px 0px 20px;
+    padding: 15px;
+}
+
+#produtos{
+    color: aquamarine;
+}
+
+#produtos h3{
+    color: yellow;
+}
+
+#produtos p{
+    color: black;
+}
+
+#produtos img{
+    width: 200px;
+    height: 200px;
+}
+
+#produtos li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 15px;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    padding: 20px 30px;
+    margin: 1.2%;
+    border: thin solid red;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+
+h1,h2,h3,h4, p{
+    font-weight: 900;
+    padding: 10px;
+}
+
+button{
+    background: transparent;
+    color: purple;
+    font-weight: 600;
+    border: thin solid;
+    cursor: pointer;
+}

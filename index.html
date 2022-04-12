@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chris Shop</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cabecalho">
+      <h1>Chris Shop</h1>
+    </div>
+    <div id="produtos">
+      <ul>
+        <li>
+          <div id="brasil">
+            <img src="./produtos/camisa-brasil.png" alt="camisa seleção brasileira" />
+            <h2>Camisa Seleção Brasileira</h2>
+            <h3>R$ 150,00</h3>
+            <p>Seleção penta-campeã mundial</p>
+            <button type="submit" onclick="adicionarCarrinho()">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </li>
+        <li>
+          <div id="colombia">
+            <img src="./produtos/camisa-colombia.png" alt="camisa seleção colombiana" />
+            <h2>Camisa Seleção Colombiana</h2>
+            <h3>R$ 150,00</h3>
+            <p>Seleção campeã da américa em 2001</p>
+            <button type="submit" onclick="adicionarCarrinho()">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </li>
+        <li>
+          <div id="argentina">
+            <img src="./produtos/camisa-argentina.png" alt="camisa seleção argentina" />
+            <h2>Camisa Seleção Argentina</h2>
+            <h3>R$ 150,00</h3>
+            <p>Seleção 7x campeã do panamericano</p>
+            <button type="submit" onclick="adicionarCarrinho()">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div id="carrinho">
+        <br>
+        <br>
+        <script src="main.js"></script>
+      </div>
+    </div>
+    <footer>LuizHakan&copy;</footer>
+  </body>
+</html>
