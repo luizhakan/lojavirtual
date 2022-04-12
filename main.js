@@ -66,7 +66,7 @@ var links = document.querySelectorAll('.ancora');
 for(var i = 0; i < links.length; i++){
     links[i].addEventListener("click", function(){
         let key = this.getAttribute('key');
-        // itens[key].quantidade++;
+        itens[key].quantidade++;
         adicionarCarrinho();
         return false;
     })
