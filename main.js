@@ -37,15 +37,28 @@ let itens = [
   }
 ];
 
+function validador(valor){
+  let divProdutos = document.getElementById('produtos');
+
+  itens.forEach(valor => {
+    if(valor.estoque <= 0){
+      divProdutos.innerHTML +=
+      `
+      <p class="ancora" key="`+ valor.codigo +`>ITEM ESGOTADO</p>
+      `
+    } else{
+      divProdutos.innerHTML += `
+      <a class="ancora" key="`+ valor.codigo + `" href"#">Adicionar ao carrinho</a>
+      `
+    }
+    // valor.estoque <= 0? valor.nome + ' Esgotado ': valor.estoque;
+  });
+  
+}
 
 
 loja = () => {
     let divProdutos = document.getElementById('produtos');
-
-    if(itens.estoque <= 0){
-      var esgotado = 'item esgotado';
-      console.log(esgotado)
-    }
 
     itens.map((valor) => {
         divProdutos.innerHTML += `
@@ -57,8 +70,9 @@ loja = () => {
             <h2>` + valor.nome +`</h2>
             <h3>`+ valor.preco +`</h3>
             <p>`+ valor.descricao +`</p>
-            <p>Estoque : ` /*+ valor.estoque <= 0 ? valor.esgotado:*/+ valor.estoque +`</p>
-            <a class="ancora" key="`+ valor.codigo +`" href"#">Adicionar ao carrinho</a>
+            <p>Estoque : ` + valor.estoque +`</p>`+
+            validador()+`
+            `/*<a class="ancora" key="`+ valor.codigo +`" href"#">Adicionar ao carrinho</a>*/`
             </li>
           </div>
         `

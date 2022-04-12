@@ -1,4 +1,4 @@
-1) Consulta por código de produto. ok
+1) Consulta por código de produto. // ok
 
 - Crie uma página de produto com a opção addtoCart // ok
 
