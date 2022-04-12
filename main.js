@@ -1,6 +1,6 @@
 let itens = [
   {
-    codigo: 0505,
+    codigo: 0,
     nome: "Camisa Seleção Brasileira",
     img: "./produtos/camisa-brasil.png",
     descricao: "Seleção penta-campeã mundial",
@@ -9,7 +9,7 @@ let itens = [
     quantidade: 0
   },
   {
-    codigo: 2001,
+    codigo: 1,
     nome: "Camisa Seleção Colombiana",
     img: "./produtos/camisa-colombia.png",
     preco : "R$ 150,00",
@@ -18,7 +18,7 @@ let itens = [
     quantidade: 0
   },
   {
-    codigo: 0707,
+    codigo: 2,
     nome: "Camisa Seleção Argentina",
     img: "./produtos/camisa-argentina.png",
     descricao: "Seleção 7x campeã do panamericano",
@@ -44,7 +44,7 @@ loja = () => {
             <h3>`+ valor.preco +`</h3>
             <p>`+ valor.descricao +`</p>
             <p>Estoque : `+ valor.estoque +`</p>
-            <input type="button" class="ancora" key="`+ valor.codigo +`" onClick="adicionarCarrinho()" value="Adicionar ao carrinho">
+            <a class="ancora" key="`+ valor.codigo +`" href"#">Adicionar ao carrinho</a>
             </li>
           </div>
         `
@@ -54,17 +54,17 @@ loja = () => {
 loja();
 
 
-adicionarCarrinho = (key) => {
+adicionarCarrinho = () => {
     
-    console.log(itens.quantidade);
+    console.log(itens);
 };
 
 
 
-var indice = document.querySelectorAll('.ancora');
+var links = document.getElementsByTagName('a');
 
-for(var i = 0; i < indice.length; i++){
-    indice[i].addEventListener("click", function(){
+for(var i = 0; i < links.length; i++){
+    links[i].addEventListener("click", function(){
         let key = this.getAttribute('key');
         itens[key].quantidade++;
         adicionarCarrinho();
