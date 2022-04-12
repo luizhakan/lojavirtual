@@ -54,23 +54,23 @@ loja();
 
 
 
-// adicionarCarrinho = (key) => {
+adicionarCarrinho = (key) => {
     
-//     console.log(itens.quantidade);
-// };
+    console.log(itens.quantidade);
+};
 
 
 
-// var links = document.querySelectorAll('.ancora');
+var links = document.querySelectorAll('.ancora');
 
-// for(var i = 0; i < links.length; i++){
-//     links[i].addEventListener("click", function(){
-//         let key = this.getAttribute('key');
-//         // itens[key].quantidade++;
-//         adicionarCarrinho();
-//         return false;
-//     })
-// }
+for(var i = 0; i < links.length; i++){
+    links[i].addEventListener("click", function(){
+        let key = this.getAttribute('key');
+        // itens[key].quantidade++;
+        adicionarCarrinho();
+        return false;
+    })
+}
 
 // iniciarLoja = () => {
 //   let divProdutos = document.getElementById("produtos");
