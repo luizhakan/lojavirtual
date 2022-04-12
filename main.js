@@ -48,10 +48,10 @@ function validador(valor){
       `
     } else{
       divProdutos.innerHTML += `
-      <a class="ancora" key="`+ valor.codigo + `" href"#">Adicionar ao carrinho</a>
+      <input type="button" class="ancora" key="`+ valor.codigo + `">Adicionar ao carrinho</a>
       `
     }
-    // valor.estoque <= 0? valor.nome + ' Esgotado ': valor.estoque;
+
   });
   
 }
@@ -71,8 +71,7 @@ loja = () => {
             <h3>`+ valor.preco +`</h3>
             <p>`+ valor.descricao +`</p>
             <p>Estoque : ` + valor.estoque +`</p>`+
-            validador()+`
-            `/*<a class="ancora" key="`+ valor.codigo +`" href"#">Adicionar ao carrinho</a>*/`
+            validador(valor)+`
             </li>
           </div>
         `
