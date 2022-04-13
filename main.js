@@ -81,8 +81,24 @@ for(var i = 0; i < botao.length; i++){
       itens[key].quantidade++;
       itens[key].estoque--;
       
+      
+      
     } else if(itens[key].estoque == 0){
       alert('esgotado')
+      divProdutos.innerHTML += `
+      <div class="col">
+      <ul>
+        <li class="card-body">
+        <img src="`+itens[key].img+`"</img>
+        <p>`+itens[key].nome+`</p>
+        <p>`+itens[key].descricao+`</p>
+        <p>`+itens[key].preco+`</p>
+        <p id="estoque">Estoque : 0 </p>
+        <p>Esgotado</p>
+        </li>
+      </ul>
+    </div>
+    `
     }
     adicionarCarrinho()
   })
