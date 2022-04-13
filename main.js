@@ -5,7 +5,8 @@ let itens = [
     img: "./produtos/camisa-brasil.png",
     descricao: "Seleção penta-campeã mundial",
     preco : "R$ 150,00",
-    quantidade: 0
+    quantidade: 0,
+    estoque: 10
   },
   {
     codigo: 1,
@@ -13,7 +14,8 @@ let itens = [
     img: "./produtos/camisa-colombia.png",
     preco : "R$ 150,00",
     descricao: "Seleção campeã da américa em 2001",
-    quantidade: 0
+    quantidade: 0,
+    estoque: 10
   },
   {
     codigo: 2,
@@ -21,7 +23,8 @@ let itens = [
     img: "./produtos/camisa-argentina.png",
     descricao: "Seleção 7x campeã do panamericano",
     preco : "R$ 150,00",
-    quantidade: 0
+    quantidade: 0,
+    estoque: 10
   },
   {
     codigo: 3,
@@ -29,7 +32,8 @@ let itens = [
     img: "./produtos/camisa-argentina.png",
     descricao: "O melhor, receba",
     preco: "R$ 1000,00",
-    quantidade: 0
+    quantidade: 0,
+    estoque: 10
   }
 ];
 
@@ -45,6 +49,7 @@ itens.forEach((item) => {
       <p>`+item.nome+`</p>
       <p>`+item.descricao+`</p>
       <p>`+item.preco+`</p>
+      <p id="estoque">Estoque : `+item.estoque+`</p>
       <button class="w-100 btn btn-lg btn-primary" key="`+item.codigo+`">Adicionar ao Carrinho</button>
       </li>
     </ul>
@@ -69,9 +74,16 @@ function adicionarCarrinho(){
 }
 
 for(var i = 0; i < botao.length; i++){
+  let estoque = document.getElementById('estoque')
   botao[i].addEventListener("click", function(){
     let key = this.getAttribute('key');
-    itens[key].quantidade++;
-    adicionarCarrinho();
+    if(itens[key].estoque > 0){
+      itens[key].quantidade++;
+      itens[key].estoque--;
+      
+    } else if(itens[key].estoque == 0){
+      alert('esgotado')
+    }
+    adicionarCarrinho()
   })
 }
