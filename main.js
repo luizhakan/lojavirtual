@@ -28,123 +28,55 @@ let itens = [
   },
   {
     codigo: 3,
-    nome: "Teste",
+    nome: "Luiz Hakan",
     img: "./produtos/camisa-argentina.png",
-    descricao: "teste",
-    preco: "teste",
-    estoque : 0,
+    descricao: "O melhor, receba",
+    preco: "R$ 1000,00",
+    estoque : 1000,
     quantidade: 0
   }
 ];
 
-function validador(valor){
-  let divProdutos = document.getElementById('produtos');
+const divProdutos = document.querySelector('#produtos');
+var divCarrinho = document.querySelector('#carrinho');
 
-  itens.forEach(valor => {
-    if(valor.estoque <= 0){
-      divProdutos.innerHTML +=
-      `
-      <p class="ancora" key="`+ valor.codigo +`>ITEM ESGOTADO</p>
-      `
-    } else{
-      divProdutos.innerHTML += `
-      <input type="button" class="ancora" key="`+ valor.codigo + `">Adicionar ao carrinho</a>
+itens.forEach((item) => {
+  divProdutos.innerHTML += `
+  <div id="produto-js">
+    <ul>
+      <li>
+      <img src="`+item.img+`"</img>
+      <p>`+item.nome+`</p>
+      <p>`+item.descricao+`</p>
+      <p>`+item.preco+`</p>
+      <p> Estoque : `+item.estoque+`</p>
+      <button id="botao" key="`+item.codigo+`">Adicionar ao Carrinho</button>
+      </li>
+    </ul>
+  </div>
+  `
+})
+
+const botao = document.getElementsByTagName('button');
+
+function adicionarCarrinho(){
+  divCarrinho.innerHTML = "";
+  itens.forEach((valor) => {
+    if(valor.quantidade > 0){
+      divCarrinho.innerHTML += `
+      <div id="carrinho-js">
+      <p style="float:left"> Produto : `+valor.nome+`</p>
+      <p style="float:right"> Quantidade : `+valor.quantidade+`</p>
+      </div style="clear:both">
       `
     }
-
-  });
-  
+  })
 }
 
-
-loja = () => {
-    let divProdutos = document.getElementById('produtos');
-
-    itens.map((valor) => {
-        divProdutos.innerHTML += `
-        <div id="produtos">
-      <ul>
-        <li>
-            <img src="` + 
-            valor.img +`"/>
-            <h2>` + valor.nome +`</h2>
-            <h3>`+ valor.preco +`</h3>
-            <p>`+ valor.descricao +`</p>
-            <p>Estoque : ` + valor.estoque +`</p>`+
-            validador(valor)+`
-            </li>
-          </div>
-        `
-    })
+for(var i = 0; i < botao.length; i++){
+  botao[i].addEventListener("click", function(){
+    let key = this.getAttribute('key');
+    itens[key].quantidade++;
+    adicionarCarrinho();
+  })
 }
-
-loja();
-
-
-adicionarCarrinho = () => {
-
-  let divCarrinho = document.getElementById('carrinho');
-  divCarrinho.innerHTML = "";
-
-  itens.map((valor) => {
-      if(valor.quantidade > 0){
-    
-    divCarrinho.innerHTML += `
-    <p>`+ valor.nome +` | quantidade : `+valor.quantidade+`| código do produto : 0`+valor.codigo+`</p>
-    <hr>
-    `}
-})
-    
-};
-
-// adicionarCarrinho();
-
-
-var links = document.getElementsByTagName('a');
-
-for(var i = 0; i < links.length; i++){
-    links[i].addEventListener("click", function(){
-        let key = this.getAttribute('key');
-        itens[key].quantidade++;
-        adicionarCarrinho();
-        return false;
-    })
-}
-
-// iniciarLoja = () => {
-//   let divProdutos = document.getElementById("produtos");
-//   itens.map((valor) => {
-//     divProdutos.innerHTML +=
-//       `
-//             <div id="produtos">
-//             <img src="` +
-//       valor.img +
-//       `"/>
-//             <p>+` +
-//       valor.nome +
-//       `</p>
-//             <a key="` +
-        
-//       valor.codigo +
-//       `" href"#"> Adicionar ao Carrinho</a>
-//         `;
-        
-//   });
-// };
-
-// iniciarLoja();
-
-// adicionarCarrinho = (
-    
-// ) => {console.log(itens)};
-
-// let links = document.getElementsByTagName('a')
-
-// for (var i = 0; i < links < links.length; i++){
-//     links[i].addEventListener("click", function(){
-//         let key = links.getAttribute('key');
-//         itens[key].quantidade++;
-//         adicionarCarrinho();
-//         return false;
-//     })
-// }

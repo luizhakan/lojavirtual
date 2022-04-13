@@ -1,6 +1,6 @@
-1) Consulta por código de produto. // ok
+1) Consulta por código de produto. 
 
-- Crie uma página de produto com a opção addtoCart // ok
+- Crie uma página de produto com a opção addtoCart  // ok
 
 - A página de produtos deve conter o preço. // ok
 
@@ -14,7 +14,7 @@
 
 - A página de produtos deve conter resumo.
 
-- A página de produtos deve ter uma imagem de sua escolha. // ok
+- A página de produtos deve ter uma imagem de sua escolha.  // ok
 
 2) Consulte todos os produtos
 
