@@ -5,7 +5,6 @@ let itens = [
     img: "./produtos/camisa-brasil.png",
     descricao: "Seleção penta-campeã mundial",
     preco : "R$ 150,00",
-    estoque: 10,
     quantidade: 0
   },
   {
@@ -14,7 +13,6 @@ let itens = [
     img: "./produtos/camisa-colombia.png",
     preco : "R$ 150,00",
     descricao: "Seleção campeã da américa em 2001",
-    estoque: 10,
     quantidade: 0
   },
   {
@@ -23,7 +21,6 @@ let itens = [
     img: "./produtos/camisa-argentina.png",
     descricao: "Seleção 7x campeã do panamericano",
     preco : "R$ 150,00",
-    estoque: 10,
     quantidade: 0
   },
   {
@@ -32,7 +29,6 @@ let itens = [
     img: "./produtos/camisa-argentina.png",
     descricao: "O melhor, receba",
     preco: "R$ 1000,00",
-    estoque : 1000,
     quantidade: 0
   }
 ];
@@ -42,15 +38,14 @@ var divCarrinho = document.querySelector('#carrinho');
 
 itens.forEach((item) => {
   divProdutos.innerHTML += `
-  <div id="produto-js">
+  <div class="col">
     <ul>
-      <li>
+      <li class="card-body">
       <img src="`+item.img+`"</img>
       <p>`+item.nome+`</p>
       <p>`+item.descricao+`</p>
       <p>`+item.preco+`</p>
-      <p> Estoque : `+item.estoque+`</p>
-      <button id="botao" key="`+item.codigo+`">Adicionar ao Carrinho</button>
+      <button class="w-100 btn btn-lg btn-primary" key="`+item.codigo+`">Adicionar ao Carrinho</button>
       </li>
     </ul>
   </div>
@@ -64,7 +59,7 @@ function adicionarCarrinho(){
   itens.forEach((valor) => {
     if(valor.quantidade > 0){
       divCarrinho.innerHTML += `
-      <div id="carrinho-js">
+      <div class="table-responsive">
       <p style="float:left"> Produto : `+valor.nome+`</p>
       <p style="float:right"> Quantidade : `+valor.quantidade+`</p>
       </div style="clear:both">
